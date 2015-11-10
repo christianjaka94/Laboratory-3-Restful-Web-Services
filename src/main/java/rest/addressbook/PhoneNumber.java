@@ -23,5 +23,30 @@ public class PhoneNumber {
 	public void setType(PhoneType type) {
 		this.type = type;
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj){
+			return true;
+		}
+		if (obj == null){
+			return false;
+		}
+		if (getClass() != obj.getClass()){
+			return false;
+		}
+		PhoneNumber other = (PhoneNumber) obj;
+		if (number == null) {
+			if (other.number != null){
+				return false;
+			}
+		}
+		else if (!number.equals(other.number)){
+			return false;
+		}
+		if (type != other.type){
+			return false;
+		}
+		return true;
+	}
 
 }
